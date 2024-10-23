@@ -9,14 +9,15 @@ const NoAurasInfoScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Choose the type of migraine you want to relieve</Text>
+      <Text style={styles.title}>
+        No Aura's Migraine
+      </Text>
 
-      {/* QUITAR EL BOTON Y PONER PARRAFOS PARA LA INFO */}
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Activate Functions</Text>
-        </TouchableOpacity>
-        </View>
+      <Text style={styles.paragraph}>
+        Inserte el texto de esta migraña aqui c:
+      </Text>
+
+
     </View>
   );
 };
@@ -24,18 +25,22 @@ const NoAurasInfoScreen = () => {
 // Estilos personalizados
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#2e4e66',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1, // Permite que el contenedor ocupe todo el espacio disponible
+    backgroundColor: '#131313', // Establece un fondo negro o gris oscuro
+    alignItems: 'center', // Centra los elementos horizontalmente
+    justifyContent: 'center', // Centra los elementos verticalmente
+    paddingHorizontal: 20, // Espaciado horizontal interno
   },
   title: {
     fontSize: 20,
     color: 'white',
     marginBottom: 20,
   },
-
-  //PARRAFOS DE TEXTO CON INFO
+  paragraph: {
+    fontSize: 16,  // ajusta el tamaño de la fuente
+    lineHeight: 30,  // ajusta la altura de línea para un mejor espaciado
+    color: '#fff',  // ajusta el color del texto
+  },
 });
 
 export default NoAurasInfoScreen;
