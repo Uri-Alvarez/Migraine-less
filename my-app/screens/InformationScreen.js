@@ -7,10 +7,13 @@ const InformationScreen = () => {
 
     return (
         <View style={styles.container}>
-          <Text style={styles.title}>This is a little explanation for every migraine</Text>
+          <Text style={styles.title}>
+            This is a little explanation for every migraine.
+            Please chosse one.
+          </Text>
     
           {/* Contenedor para el botón de Auras Migraine */}
-          <View style={styles.buttonContainer}>
+          <View style={styles.AurasbuttonContainer}>
             <TouchableOpacity 
               style={styles.button} 
               onPress={() => navigation.navigate('Auras Migraine')} // Mueve onPress aquí
@@ -20,7 +23,7 @@ const InformationScreen = () => {
           </View>
     
           {/* Contenedor para el botón de No Auras Migraine */}
-          <View style={styles.buttonContainer}>
+          <View style={styles.NoAurasbuttonContainer}>
             <TouchableOpacity 
               style={styles.button} 
               onPress={() => navigation.navigate('No Auras Migraine')} // Mueve onPress aquí
@@ -35,17 +38,23 @@ const InformationScreen = () => {
 // Estilos personalizados
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#2e4e66',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1, // Permite que el contenedor ocupe todo el espacio disponible
+    backgroundColor: '#131313', // Establece un fondo negro o gris oscuro
+    alignItems: 'center', // Centra los elementos horizontalmente
+    justifyContent: 'center', // Centra los elementos verticalmente
+    paddingHorizontal: 20, // Espaciado horizontal interno
   },
   title: {
     fontSize: 20,
     color: 'white',
     marginBottom: 20,
   },
-  buttonContainer: {
+  AurasbuttonContainer: {
+    flexDirection: 'row', // Organiza los botones en una fila
+    flexWrap: 'wrap', // Permite que los botones se envuelvan en una nueva línea si es necesario
+    justifyContent: 'space-around',
+  },
+  NoAurasbuttonContainer: {
     flexDirection: 'row', // Organiza los botones en una fila
     flexWrap: 'wrap', // Permite que los botones se envuelvan en una nueva línea si es necesario
     justifyContent: 'space-around',
