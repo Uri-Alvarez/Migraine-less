@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     width: '85%', // Ancho del campo de entrada al 100%
     backgroundColor: '#2a2a2a', // Fondo gris oscuro para los inputs
     color: '#fff', // Texto blanco
-    padding: 15, // Espaciado interno
+    padding: 10, // Espaciado interno
     borderRadius: 10, // Esquinas redondeadas
     marginBottom: 15, // Espacio inferior entre los campos de entrada
     //marginRight: .01,
