@@ -12,17 +12,21 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Choose the type of migraine you want to relieve</Text>
+      <Text style={styles.title}>Migraine-Less</Text>
+
+      <Text style={styles.paragraph}>
+        Press the left button to activate migraine mode, and the right button to get more information about migraine.
+      </Text>
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
-          style={styles.button} 
+          style={styles.Activetebutton} 
           onPress={handleFunctions}>
           <Text style={styles.buttonText}>Activate Functions</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
-          style={styles.button} 
+          style={styles.Infobutton} 
           onPress={() => navigation.navigate('Migraines Information')} // Navega a Migraine2
         >
           <Text style={styles.buttonText}>Migraine Information</Text>
@@ -32,25 +36,46 @@ const HomeScreen = () => {
   );
 };
 
-// Estilos siguen igual...
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#2e4e66',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1, // Permite que el contenedor ocupe todo el espacio disponible
+    backgroundColor: '#131313', // Establece un fondo negro o gris oscuro
+    alignItems: 'center', // Centra los elementos horizontalmente
+    justifyContent: 'center', // Centra los elementos verticalmente
+    paddingHorizontal: 20, // Espaciado horizontal interno
   },
   title: {
-    fontSize: 20,
-    color: 'white',
-    marginBottom: 20,
+    fontSize: 32, // Tamaño de la fuente para el título
+    color: '#fff', // Color blanco para el texto
+    fontWeight: 'bold', // Establece el peso de la fuente en negrita
+    marginBottom: 10, // Espacio inferior del título
+  },
+  paragraph: {
+    fontSize: 16,  // ajusta el tamaño de la fuente
+    lineHeight: 30,  // ajusta la altura de línea para un mejor espaciado
+    color: '#fff',  // ajusta el color del texto
   },
   buttonContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
   },
-  button: {
+  Activetebutton: {
+    backgroundColor: '#4522b9',
+    borderRadius: 10,
+    padding: 20,
+    margin: 10,
+    width: 120,
+    height: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  Infobutton: {
     backgroundColor: '#4522b9',
     borderRadius: 10,
     padding: 20,
