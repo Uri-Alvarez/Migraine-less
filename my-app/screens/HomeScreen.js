@@ -7,7 +7,7 @@ const HomeScreen = () => {
 
   //Pedir el backend para que se activen las funciones
   const handleFunctions = () => {
-    //BACKEND PARA QUE EL BOTON DE "ACTIVAR FUNCIONES" ACTIVE LAS FUNCIONES
+    // Las funciones de brillo, sonido, y notificaciones, van aquí
   };
 
   return (
