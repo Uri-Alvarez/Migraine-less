@@ -14,7 +14,7 @@ const AurasInfoScreen = () => {
       </Text>
 
       <Text style={styles.paragraph}>
-        Press the left button to activate migraine mode, and the right button to get more information about migraine.
+        Inserte el texto de esta migraña aqui c:
       </Text>
 
 
