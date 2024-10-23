@@ -11,6 +11,10 @@ const InformationScreen = () => {
             This is a little explanation for every migraine.
             Please chosse one.
           </Text>
+
+          <Text style={styles.paragraph}>
+            Auras Migraine: Migraine with identifiable symptoms.
+          </Text>
     
           {/* Contenedor para el botón de Auras Migraine */}
           <View style={styles.AurasbuttonContainer}>
@@ -21,6 +25,10 @@ const InformationScreen = () => {
               <Text style={styles.buttonText}>Auras Migraine</Text>
             </TouchableOpacity>
           </View>
+
+          <Text style={styles.paragraph}>
+            Auras Migraine: Migraine without identifiable symptoms.
+          </Text>
     
           {/* Contenedor para el botón de No Auras Migraine */}
           <View style={styles.NoAurasbuttonContainer}>
@@ -48,6 +56,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     marginBottom: 20,
+  },
+  paragraph: {
+    fontSize: 12,  // ajusta el tamaño de la fuente
+    lineHeight: 30,  // ajusta la altura de línea para un mejor espaciado
+    color: '#fff',  // ajusta el color del texto
   },
   AurasbuttonContainer: {
     flexDirection: 'row', // Organiza los botones en una fila
