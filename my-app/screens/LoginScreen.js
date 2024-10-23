@@ -105,28 +105,30 @@ const styles = StyleSheet.create({
     marginBottom: 30, // Espacio inferior del subtítulo
   },
   input: {
-    width: '100%', // Ancho del campo de entrada al 100%
+    width: '85%', // Ancho del campo de entrada al 100%
     backgroundColor: '#2a2a2a', // Fondo gris oscuro para los inputs
     color: '#fff', // Texto blanco
     padding: 15, // Espaciado interno
     borderRadius: 10, // Esquinas redondeadas
     marginBottom: 15, // Espacio inferior entre los campos de entrada
+    //marginRight: .01,
   },
   passwordContainer: {
-    width: '100%', // Ancho del contenedor al 100%
+    width: '85%', // Ancho del contenedor al 100%
     flexDirection: 'row', // Dispone los elementos en fila
     alignItems: 'center', // Centra los elementos verticalmente
     backgroundColor: '#2a2a2a', // Mismo fondo gris oscuro
     borderRadius: 10, // Esquinas redondeadas
     marginBottom: 15, // Espacio inferior entre campos
+    //marginRight: .01,
   },
   inputPassword: {
     flex: 1, // Permite que el campo de entrada de contraseña ocupe todo el espacio disponible
     color: '#fff', // Texto blanco
-    padding: 15, // Espaciado interno
+    padding: 10, // Espaciado interno
   },
   eyeIcon: {
-    padding: 10, // Espaciado interno para el icono del ojo
+    padding: 1, // Espaciado interno para el icono del ojo
   },
   eyeText: {
     color: '#8c52ff', // Color morado claro para el icono del ojo
