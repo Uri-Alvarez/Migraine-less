@@ -76,7 +76,7 @@ const CreateAccountScreen = ({ navigation }) => {
           style={styles.eyeIcon}
           onPress={() => setShowPassword(!showPassword)} // Cambia el estado de visibilidad al presionar
         >
-          <Text style={styles.eyeText}>{showPassword ? '👁️' : '👁️'}</Text>
+          <Text style={styles.eyeText}>{showPassword ? '🙉' : '🙈'}</Text>
         </TouchableOpacity>
       </View>
 
