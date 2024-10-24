@@ -5,8 +5,6 @@ import * as Brightness from 'expo-brightness';
 import * as Notifications from 'expo-notifications';
 import { Audio } from 'expo-av';
 import { Appearance } from 'react-native';
-import { Audio } from 'expo-av';
-import { Appearance } from 'react-native';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
