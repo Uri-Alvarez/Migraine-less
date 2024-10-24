@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Importa el hook de navegación
-import * as Brightness from 'expo-brightness'; // Para el control del brillo
-import * as Notifications from 'expo-notifications'; // Para el control de notificaciones
+import { useNavigation } from '@react-navigation/native';
+import * as Brightness from 'expo-brightness';
+import * as Notifications from 'expo-notifications';
 import { Audio } from 'expo-av'; // Para el control de sonido
 import { Appearance } from 'react-native'; // Para el modo oscuro
 
