@@ -5,6 +5,8 @@ import * as Brightness from 'expo-brightness';
 import * as Notifications from 'expo-notifications';
 import { Audio } from 'expo-av';
 import { Appearance } from 'react-native';
+import { Audio } from 'expo-av';
+import { Appearance } from 'react-native';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -20,10 +22,10 @@ const HomeScreen = () => {
 
       await Notifications.setNotificationChannelAsync('default', {
         name: 'default',
-        importance: Notifications.AndroidImportance.LOW, // Baja prioridad para silenciar
+        importance: Notifications.AndroidImportance.LOW,
       });
 
-      
+
       Appearance.setColorScheme('dark');
       
       console.log('Funciones activadas con éxito');
