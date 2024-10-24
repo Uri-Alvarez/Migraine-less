@@ -1,31 +1,29 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Importa el hook de navegación
-import * as Brightness from 'expo-brightness'; // Para el control del brillo
-import * as Notifications from 'expo-notifications'; // Para el control de notificaciones
-import { Audio } from 'expo-av'; // Para el control de sonido
-import { Appearance } from 'react-native'; // Para el modo oscuro
+import { useNavigation } from '@react-navigation/native';
+import * as Brightness from 'expo-brightness';
+import * as Notifications from 'expo-notifications';
+import { Audio } from 'expo-av';
+import { Appearance } from 'react-native';
 
 const HomeScreen = () => {
-  const navigation = useNavigation(); // Obtiene la función de navegación
+  const navigation = useNavigation();
 
   //Pedir el backend para que se activen las funciones
   const handleFunctions = async () => {
     try {
-      // Reducir el brillo al mínimo
+      
       await Brightness.setBrightnessAsync(0.1);
 
-      // Bajar el volumen al mínimo
       const soundObject = new Audio.Sound();
       await soundObject.setVolumeAsync(0.0);
 
-      // Silenciar notificaciones
       await Notifications.setNotificationChannelAsync('default', {
         name: 'default',
         importance: Notifications.AndroidImportance.LOW, // Baja prioridad para silenciar
       });
 
-      // Cambiar al modo oscuro
+      
       Appearance.setColorScheme('dark');
       
       console.log('Funciones activadas con éxito');
