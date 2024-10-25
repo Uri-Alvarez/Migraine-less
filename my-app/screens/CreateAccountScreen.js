@@ -1,7 +1,6 @@
 // Importa las dependencias necesarias de React y React Native.
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, AsyncStorage } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Importa el hook de navegación
+import { View, Text, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 
 // Componente funcional que representa el formulario para crear una cuenta.
 const CreateAccountScreen = ({ navigation }) => {
