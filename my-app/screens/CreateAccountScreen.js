@@ -1,29 +1,27 @@
 // Importa las dependencias necesarias de React y React Native.
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, AsyncStorage } from 'react-native';
 
 // Componente funcional que representa el formulario para crear una cuenta.
 const CreateAccountScreen = ({ navigation }) => {
   // Estados para almacenar los valores del formulario.
   const [name, setName] = useState(''); // Estado para el nombre.
   const [age, setAge] = useState(''); // Estado para la edad.
-  const [gender, setGender] = useState(''); // Estado para el sexo.
   const [email, setEmail] = useState(''); // Estado para el correo.
   const [password, setPassword] = useState(''); // Estado para la contraseña.
   const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/ocultar la contraseña.
 
   // Función que maneja el evento de creación de cuenta.
   const handleCreateAccount = () => {
-    // Aquí va la lógica del backend para guardar los datos del usuario en la base de datos.
-    console.log({
-      name,
-      age,
-      gender,
-      email,
-      password,
-    });
-    // Después de guardar los datos, navega a la pantalla de inicio.
-    navigation.navigate('Home');
+    if(name && age && email && password){
+      console.log({
+        name,
+        age,
+        email,
+        password,
+      });
+      navigation.navigate('Home');
+    }
   };
 
   // Renderiza el formulario de creación de cuenta.
@@ -66,7 +64,7 @@ const CreateAccountScreen = ({ navigation }) => {
           style={styles.inputPassword}
           placeholder="Enter your password..."
           placeholderTextColor="#a6a6a6" // Texto de marcador de posición en gris claro
-          secureTextEntry={!showPassword} // Define si el texto de entrada es seguro según el estado de visibilidad
+          secureTextEntry={!showPassword} 
           value={password} // Valor del input de contraseña
           onChangeText={setPassword} // Actualiza el estado de la contraseña cuando el texto cambia
         />

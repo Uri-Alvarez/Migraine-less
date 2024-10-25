@@ -9,14 +9,47 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState(''); // Estado para la contraseña, inicializado como cadena vacía
   const [showPassword, setShowPassword] = useState(false); // Inicializa el estado de visibilidad de la contraseña como falso.
 
-  // Función que se ejecuta al presionar el botón de login
   //Para backend
-  const handleLogin = () => {
-    // Aquí se añade la lógica de autenticación
-    console.log('Email:', email, 'Password:', password); // Imprime el correo y la contraseña en la consola
-    // Navega a la pantalla principal si el login es exitoso
-    navigation.navigate('Home'); // Redirige a la pantalla "Home"
+  const handleLogin = async () => {
+    const arrayData = [];
+    if (email && password) {
+      const data = {
+        em: email,
+        pw: password,
+      };
+      arrayData.push(data);
+      try {
+
+        // Obtener los datos almacenados en AsyncStorage
+        //const value = await AsyncStorage.getItem('database');
+        //if (value !== null) {
+        //  const d = JSON.parse(value);
+        //  d.push(data);
+        //  await AsyncStorage.setItem('database', JSON.stringify(d)); // Guardar los datos actualizados
+        //} else {
+          // Si no hay datos, almacenar el nuevo array directamente
+        //  await AsyncStorage.setItem('database', JSON.stringify(arrayData));
+        //}
+  
+        // Navegar al home solo después de almacenar los datos correctamente
+        console.log({
+          email,
+          password,
+        });
+        navigation.navigate('Home');
+      } catch (err) {
+        // En caso de que algo salga mal con el storage
+        console.log({
+          err,
+          email,
+          password,
+        });
+      }
+    } else {
+      console.log('Por favor, completa todos los campos.');
+    }
   };
+  
 
   // Renderiza el componente
   return (
