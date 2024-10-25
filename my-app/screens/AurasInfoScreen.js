@@ -3,6 +3,11 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; // Importa el hook de navegación
 
+  //Pedir el backend para que se activen las funciones
+  const handleFunctions = () => {
+    //BACKEND PARA QUE EL BOTON DE "ACTIVAR FUNCIONES" ACTIVE LAS FUNCIONES
+  };
+
 const AurasInfoScreen = () => {
     const navigation = useNavigation(); // Usa el hook para obtener el objeto de navegación
 
@@ -10,14 +15,24 @@ const AurasInfoScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        Aura's Migraine
+        Emergencia
       </Text>
 
       <Text style={styles.paragraph}>
-        Inserte el texto de esta migraña aqui c:
+        Espacio que pidió ric y que hara algo más adelante
       </Text>
 
+
       <View style={styles.buttonContainer}>
+
+        {/* Botón de rpueba */}
+        <TouchableOpacity 
+          style={styles.AlgoButton} 
+          onPress={handleFunctions}>
+          <Text style={styles.AlgoButtonText}>Boton Prueba</Text>
+        </TouchableOpacity>
+
+
       {/* Botón para volver atras */}
       <TouchableOpacity 
         style={styles.BackButton} 
@@ -61,6 +76,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+  },
+  AlgoButton: {
+    backgroundColor: '#8c52ff', // Fondo morado púrpura para el botón
+    paddingVertical: 15, // Espaciado vertical interno
+    paddingHorizontal: 30, // Espaciado horizontal interno
+    borderRadius: 10, // Esquinas redondeadas
+    marginBottom: 15, // Espacio inferior del botón
+    marginTop: 15, // Espacio inferior del botón
+  },
+  AlgoButtonText: {
+    color: '#fff', // Texto blanco para el botón
+    fontWeight: 'bold', // Establece el peso de la fuente en negrita
+    fontSize: 16, // Tamaño de la fuente para el texto del botón
   },
 
   BackButton: {

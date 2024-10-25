@@ -7,7 +7,7 @@ import HomeScreen from './screens/HomeScreen'; // Importa la pantalla principal
 import CreateAccountScreen from './screens/CreateAccountScreen'; // Importa la pantalla del botón CreateAccount
 import InformationScreen from './screens/InformationScreen'; // Importa la pantalla del botón "Informacion"
 import AurasInfoScreen from './screens/AurasInfoScreen';
-import NoAurasInfoScreen from './screens/NoAurasInfoScreen';
+import PoliciesScreen from './screens/PoliciesScreen';
 
 // Crea una instancia del navegador de pila
 const Stack = createStackNavigator();
@@ -76,10 +76,10 @@ export default function App() {
         />
 
         <Stack.Screen 
-          name="No Auras Migraine"
-          component={NoAurasInfoScreen}
+          name="Politicas de Privacidad" 
+          component={PoliciesScreen} 
           options={{ 
-            title: 'No Auras Migraine', // Título de la pantalla
+            title: 'Politicas de Privacidad', // Título de la pantalla
             headerStyle: {
               backgroundColor: '#131c46', // Cambia el color de fondo de la barra de navegación
             },

@@ -2,6 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; // Importa el hook de navegación
 
+//Pedir el backend para que se activen las funciones
+const handleFunctions = () => {
+  //BACKEND PARA QUE EL BOTON DE "ACTIVAR FUNCIONES" ACTIVE LAS FUNCIONES
+};
+
 const InformationScreen = () => {
     const navigation = useNavigation(); // Usa el hook para obtener el objeto de navegación
 
@@ -22,21 +27,7 @@ const InformationScreen = () => {
               style={styles.button} 
               onPress={() => navigation.navigate('Auras Migraine')} // Mueve onPress aquí
             >
-              <Text style={styles.buttonText}>Auras Migraine</Text>
-            </TouchableOpacity>
-          </View>
-
-          <Text style={styles.paragraph}>
-            Auras Migraine: Migraine without identifiable symptoms.
-          </Text>
-    
-          {/* Contenedor para el botón de No Auras Migraine */}
-          <View style={styles.NoAurasbuttonContainer}>
-            <TouchableOpacity 
-              style={styles.button} 
-              onPress={() => navigation.navigate('No Auras Migraine')} // Mueve onPress aquí
-            >
-              <Text style={styles.buttonText}>No Auras Migraine</Text>
+              <Text style={styles.buttonText}>Emergencia</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -63,11 +54,6 @@ const styles = StyleSheet.create({
     color: '#fff',  // ajusta el color del texto
   },
   AurasbuttonContainer: {
-    flexDirection: 'row', // Organiza los botones en una fila
-    flexWrap: 'wrap', // Permite que los botones se envuelvan en una nueva línea si es necesario
-    justifyContent: 'space-around',
-  },
-  NoAurasbuttonContainer: {
     flexDirection: 'row', // Organiza los botones en una fila
     flexWrap: 'wrap', // Permite que los botones se envuelvan en una nueva línea si es necesario
     justifyContent: 'space-around',

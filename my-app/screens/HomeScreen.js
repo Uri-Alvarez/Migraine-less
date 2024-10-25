@@ -40,7 +40,7 @@ const HomeScreen = () => {
       <Text style={[styles.title, { color: '#ECECEC' }]}>Migraine-Less</Text>
 
       <Text style={[styles.paragraph, { color: '#ECECEC' }]}>
-        Press the left button to {isMigraineMode ? 'deactivate' : 'activate'} migraine mode, and the right button to get more information about migraine
+        Elija una de las siguientes Opciones.
       </Text>
 
       <View style={styles.buttonContainer}>
@@ -54,8 +54,9 @@ const HomeScreen = () => {
 
         <TouchableOpacity 
           style={styles.Infobutton} 
-          onPress={() => navigation.navigate('Migraines Information')}>
-          <Text style={styles.buttonText}>Migraine Information</Text>
+          onPress={() => navigation.navigate('Migraines Information')} // Navega a Migraine2
+        >
+          <Text style={styles.buttonText}>Contacto de Emergencia</Text>
         </TouchableOpacity>
       </View>
     </View>
