@@ -1,58 +1,55 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Appearance } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import * as Brightness from 'expo-brightness';
 import * as Notifications from 'expo-notifications';
-// Verifica si VolumeControl está disponible, pero no lo uses si es null
-let VolumeControl;
-
-try {
-  VolumeControl = require('react-native-volume-control');
-} catch (error) {
-  console.error('react-native-volume-control no es compatible con Expo, o no está instalado correctamente.');
-}
+import * as Haptics from 'expo-haptics';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
+  const [isMigraineMode, setIsMigraineMode] = useState(false);
 
-  // Función para activar las funciones solicitadas
+  // Función para activar/desactivar las funciones solicitadas
   const handleFunctions = async () => {
     try {
-      // Cambiar brillo al mínimo
-      await Brightness.setBrightnessAsync(0.0);
-
-      // Cambiar volumen al 10% solo si VolumeControl está disponible
-      if (VolumeControl && VolumeControl.change) {
-        VolumeControl.change(0.1);
+      if (!isMigraineMode) {
+        
+        await Brightness.setBrightnessAsync(1.0);
+        await Notifications.setNotificationChannelAsync('default', {
+          name: 'default',
+          importance: Notifications.AndroidImportance.NONE,
+          sound: null,
+        });
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+        console.log('Modo migraña activado con éxito');
+        
       } else {
-        console.error('El control de volumen no está disponible.');
+        await Brightness.setBrightnessAsync(0.0);
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+        console.log('Modo migraña desactivado');
       }
-
-      // Configurar notificaciones con prioridad baja
-      await Notifications.setNotificationChannelAsync('default', {
-        name: 'default',
-        importance: Notifications.AndroidImportance.LOW,
-      });
-
-      console.log('Funciones activadas con éxito');
+      
+      setIsMigraineMode(!isMigraineMode);
     } catch (error) {
-      console.error('Error al activar las funciones:', error);
+      console.error('Error al manejar las funciones:', error);
     }
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Migraine-Less</Text>
+    <View style={[styles.container, { backgroundColor: '#131313' }]}>
+      <Text style={[styles.title, { color: '#ECECEC' }]}>Migraine-Less</Text>
 
-      <Text style={styles.paragraph}>
-        Press the left button to activate migraine mode, and the right button to get more information about migraine.
+      <Text style={[styles.paragraph, { color: '#ECECEC' }]}>
+        Press the left button to {isMigraineMode ? 'deactivate' : 'activate'} migraine mode, and the right button to get more information about migraine
       </Text>
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
           style={styles.Activetebutton} 
           onPress={handleFunctions}>
-          <Text style={styles.buttonText}>Activate Functions</Text>
+          <Text style={styles.buttonText}>
+            {isMigraineMode ? 'Deactivate Functions' : 'Activate Functions'}
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
@@ -68,21 +65,18 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#131313',
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 20,
   },
   title: {
     fontSize: 32,
-    color: '#fff',
     fontWeight: 'bold',
     marginBottom: 10,
   },
   paragraph: {
     fontSize: 16,
     lineHeight: 30,
-    color: '#fff',
   },
   buttonContainer: {
     flexDirection: 'row',
