@@ -1,6 +1,7 @@
 // Importa las dependencias necesarias de React y React Native.
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; // Importa el hook de navegación
 
 // Componente funcional que representa el formulario para crear una cuenta.
 const CreateAccountScreen = ({ navigation }) => {
@@ -80,6 +81,11 @@ const CreateAccountScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
+      {/* Botón para ver aviso de privacidad */}
+      <TouchableOpacity style={styles.CheckButton} onPress={() => navigation.navigate('Politicas de Privacidad')}>
+        <Text style={styles.CheckButtonText}>Politicas de Privacidad</Text>
+      </TouchableOpacity>
+
       {/* Botón para crear la cuenta */}
       <TouchableOpacity style={styles.createButton} onPress={handleCreateAccount}>
         <Text style={styles.createButtonText}>Create Account</Text>
@@ -138,6 +144,18 @@ const styles = StyleSheet.create({
     marginTop: 20, // Espacio superior del botón
   },
   createButtonText: {
+    color: '#fff', // Texto blanco para el botón
+    fontWeight: 'bold', // Establece el peso de la fuente en negrita
+    fontSize: 16, // Tamaño de la fuente para el texto del botón
+  },
+  CheckButton: {
+    backgroundColor: '#8c52ff', // Fondo morado púrpura para el botón
+    paddingVertical: 15, // Espaciado vertical interno
+    paddingHorizontal: 100, // Espaciado horizontal interno
+    borderRadius: 10, // Esquinas redondeadas
+    marginBottom: 15, // Espacio inferior del botón
+  },
+  CheckButtonText: {
     color: '#fff', // Texto blanco para el botón
     fontWeight: 'bold', // Establece el peso de la fuente en negrita
     fontSize: 16, // Tamaño de la fuente para el texto del botón

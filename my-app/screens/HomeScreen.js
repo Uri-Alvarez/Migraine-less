@@ -15,21 +15,21 @@ const HomeScreen = () => {
       <Text style={styles.title}>Migraine-Less</Text>
 
       <Text style={styles.paragraph}>
-        Press the left button to activate migraine mode, and the right button to get more information about migraine.
+        Elija una de las siguientes Opciones.
       </Text>
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
           style={styles.Activetebutton} 
           onPress={handleFunctions}>
-          <Text style={styles.buttonText}>Activate Functions</Text>
+          <Text style={styles.buttonText}>Activar Funciones</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
           style={styles.Infobutton} 
           onPress={() => navigation.navigate('Migraines Information')} // Navega a Migraine2
         >
-          <Text style={styles.buttonText}>Migraine Information</Text>
+          <Text style={styles.buttonText}>Contacto de Emergencia</Text>
         </TouchableOpacity>
       </View>
     </View>
