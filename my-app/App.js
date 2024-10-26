@@ -5,7 +5,6 @@ import { StatusBar } from 'expo-status-bar'; // Importa el componente StatusBar 
 import LoginScreen from './screens/LoginScreen'; // Importa la pantalla de inicio de sesión
 import HomeScreen from './screens/HomeScreen'; // Importa la pantalla principal
 import CreateAccountScreen from './screens/CreateAccountScreen'; // Importa la pantalla del botón CreateAccount
-import InformationScreen from './screens/InformationScreen'; // Importa la pantalla del botón "Informacion"
 import AurasInfoScreen from './screens/AurasInfoScreen';
 import PoliciesScreen from './screens/PoliciesScreen';
 
@@ -47,27 +46,16 @@ export default function App() {
             headerStyle: {
               backgroundColor: '#131c46', // Cambia el color de fondo de la barra de navegación
             },
-            headerTintColor: '#fff', // Cambia el color del texto en la barra de navegación
+            headerTintColor: '#fff', // Cambia el color delimport InformationScreen from './screens/InformationScreen'; // Importa la pantalla del botón "Informacion" texto en la barra de navegación
           }}
-        />
-
-        <Stack.Screen 
-          name="Migraines Information"
-          component={InformationScreen}
-          options={{ 
-            title: 'Migraines Information', // Título de la pantalla
-            headerStyle: {
-              backgroundColor: '#131c46', // Cambia el color de fondo de la barra de navegación
-            },
-            headerTintColor: '#fff', // Cambia el color del texto en la barra de navegación
-          }} 
         />
 
         <Stack.Screen 
           name="Auras Migraine"
           component={AurasInfoScreen}
           options={{ 
-            title: 'Auras Migraine', // Título de la pantalla
+            //headerShown: false,
+            title: 'Contacto de Emergencia', // Título de la pantalla
             headerStyle: {
               backgroundColor: '#131c46', // Cambia el color de fondo de la barra de navegación
             },
@@ -86,6 +74,8 @@ export default function App() {
             headerTintColor: '#fff', // Cambia el color del texto en la barra de navegación
           }} 
         />
+
+        
 
       </Stack.Navigator>
       <StatusBar style="auto" />
