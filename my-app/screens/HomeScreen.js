@@ -13,7 +13,13 @@ const HomeScreen = () => {
   const handleFunctions = async () => {
     try {
       if (!isMigraineMode) {
-        
+        const response = await fetch('http://192.168.38.199:5000/run-scriptoff', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const data = await response.json();
         await Brightness.setBrightnessAsync(1.0);
         await Notifications.setNotificationChannelAsync('default', {
           name: 'default',
@@ -24,6 +30,13 @@ const HomeScreen = () => {
         console.log('Modo migraña activado con éxito');
         
       } else {
+        const response = await fetch('http://192.168.38.199:5000/run-script', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const data = await response.json();
         await Brightness.setBrightnessAsync(0.0);
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
         console.log('Modo migraña desactivado');
@@ -31,6 +44,7 @@ const HomeScreen = () => {
       
       setIsMigraineMode(!isMigraineMode);
     } catch (error) {
+      Alert.alert('Error')
       console.error('Error al manejar las funciones:', error);
     }
   };
