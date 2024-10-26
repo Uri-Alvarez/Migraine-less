@@ -1808,9 +1808,9 @@
   resolved "https://registry.npmjs.org/@pkgr/core/-/core-0.1.1.tgz"
   integrity sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==
 
-"@react-native-async-storage/async-storage@1.23.1":
+"@react-native-async-storage/async-storage@^1.23.1":
   version "1.23.1"
-  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.23.1.tgz#cad3cd4fab7dacfe9838dce6ecb352f79150c883"
+  resolved "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.23.1.tgz"
   integrity sha512-Qd2kQ3yi6Y3+AcUlrHxSLlnBvpdCEMVGFlVBneVOjaFaPU61g1huc38g339ysXspwY1QZA2aNhrk/KlHGO+ewA==
   dependencies:
     merge-options "^3.0.4"
@@ -4382,7 +4382,7 @@ expo-asset@~10.0.10:
 
 expo-av@~14.0.7:
   version "14.0.7"
-  resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-14.0.7.tgz#deb967325e58b2c4d408f5d76a7ccb269442cba1"
+  resolved "https://registry.npmjs.org/expo-av/-/expo-av-14.0.7.tgz"
   integrity sha512-FvKZxyy+2/qcCmp+e1GTK3s4zH8ZO1RfjpqNxh7ARlS1oH8HPtk1AyZAMo52tHz3yQ3UIqxQ2YbI9CFb4065lA==
 
 expo-brightness@~12.0.1:
@@ -4417,7 +4417,7 @@ expo-font@~12.0.10:
 
 expo-haptics@~13.0.1:
   version "13.0.1"
-  resolved "https://registry.yarnpkg.com/expo-haptics/-/expo-haptics-13.0.1.tgz#35679c7fde4ae1c21ae3bc2d2cb34c266049dc2c"
+  resolved "https://registry.npmjs.org/expo-haptics/-/expo-haptics-13.0.1.tgz"
   integrity sha512-qG0EOLDE4bROVT3DtUSyV9g3iB3YFu9j3711X7SNNEnBDXc+2/p3wGDPTnJvPW0ao6HG3/McAOrBQA5hVSdWng==
 
 expo-json-utils@~0.13.0:
@@ -4429,6 +4429,14 @@ expo-keep-awake@~13.0.2:
   version "13.0.2"
   resolved "https://registry.npmjs.org/expo-keep-awake/-/expo-keep-awake-13.0.2.tgz"
   integrity sha512-kKiwkVg/bY0AJ5q1Pxnm/GvpeB6hbNJhcFsoOWDh2NlpibhCLaHL826KHUM+WsnJRbVRxJ+K9vbPRHEMvFpVyw==
+
+expo-linking@~6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/expo-linking/-/expo-linking-6.3.1.tgz#05aef8a42bd310391d0b00644be40d80ece038d9"
+  integrity sha512-xuZCntSBGWCD/95iZ+mTUGTwHdy8Sx+immCqbUBxdvZ2TN61P02kKg7SaLS8A4a/hLrSCwrg5tMMwu5wfKr35g==
+  dependencies:
+    expo-constants "~16.0.0"
+    invariant "^2.2.4"
 
 expo-manifests@~0.14.0:
   version "0.14.3"
@@ -4499,7 +4507,7 @@ expo-notifications@~0.28.19:
 
 expo-permissions@^14.4.0:
   version "14.4.0"
-  resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-14.4.0.tgz#d7bb2f0026b87e1294ee551969c35306193f4ad3"
+  resolved "https://registry.npmjs.org/expo-permissions/-/expo-permissions-14.4.0.tgz"
   integrity sha512-oAcnJ7dlZhpBydK73cwomA2xofizayVUz+FW5REl7dMu7MYyeN/3aqhlpZ3mYddrxvG161bqu97MQr01UixUnw==
 
 expo-status-bar@~1.12.1:
@@ -5496,7 +5504,7 @@ is-path-inside@^3.0.2:
 
 is-plain-obj@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-2.1.0.tgz#45e42e37fccf1f40da8e5f76ee21515840c09287"
+  resolved "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-2.1.0.tgz"
   integrity sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
 
 is-plain-object@^2.0.4:
@@ -6299,7 +6307,7 @@ memory-cache@~0.2.0:
 
 merge-options@^3.0.4:
   version "3.0.4"
-  resolved "https://registry.yarnpkg.com/merge-options/-/merge-options-3.0.4.tgz#84709c2aa2a4b24c1981f66c179fe5565cc6dbb7"
+  resolved "https://registry.npmjs.org/merge-options/-/merge-options-3.0.4.tgz"
   integrity sha512-2Sug1+knBjkaMsMgf1ctR1Ujx+Ayku4EdJN4Z+C2+JzoeF7A3OZ9KM2GY0CpQS51NR61LTurMJrRKPhSs3ZRTQ==
   dependencies:
     is-plain-obj "^2.1.0"
