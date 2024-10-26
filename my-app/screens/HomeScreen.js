@@ -54,7 +54,7 @@ const HomeScreen = () => {
 
         <TouchableOpacity 
           style={styles.Infobutton} 
-          onPress={() => navigation.navigate('Migraines Information')} // Navega a Migraine2
+          onPress={() => navigation.navigate('Auras Migraine')}
         >
           <Text style={styles.buttonText}>Contacto de Emergencia</Text>
         </TouchableOpacity>
